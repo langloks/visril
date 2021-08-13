@@ -1,0 +1,108 @@
+@mixin text-work($margin-r, $margin-b) {
+    margin-right: $margin-r;
+    margin-bottom: $margin-b;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: right;
+}
+
+@mixin p-work($b-margin, $display: block) {
+    margin-bottom: $b-margin;
+    display: $display;
+}
+
+@mixin work-shape($height-work) {
+    position: relative;
+    height: $height-work;
+    overflow: hidden;
+}
+
+@mixin hr-up($display-hr-up: block) {
+    width: 35%;
+    display: $display-hr-up;
+    margin-bottom: rem;
+    margin-left: auto;
+}
+
+.hr-down {
+    width: 65%;
+    margin-left: auto;
+}
+
+@media all and (max-width: 2560px) {
+    #work {
+        @include work-shape(690px);
+
+        #ink {
+            max-width: 100%;
+            min-height: 50%;
+            object-fit: cover;
+        }
+        #couture {
+            position: absolute;
+           top: 40%;
+            right: 0;
+        }
+    }
+
+    #text-work {
+        @include text-work(35%, 0%);
+        .hr-up {
+            @include hr-up(block);
+        }
+    }
+}
+
+@media all and (min-width: 992px) and (max-width: 1200px) {
+    #work {
+        @include work-shape(590px);
+        #text-work {
+            @include text-work(35%, 0%);
+            .hr-up {
+                @include hr-up(none);
+            }
+        }
+    }
+}
+
+@media all and (max-width: 991px) {
+    #work {
+        @include work-shape(550px);
+        #ink {
+            max-width: 100%;
+            min-height: 50%;
+            object-fit: cover;
+        }
+        #text-work {
+            @include text-work(45%, 0%);
+            hr {
+                display: none;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 767px) {
+    #work {
+        @include work-shape(460px);
+        #text-work {
+            @include text-work(45%, 0%);
+        }
+    }
+}
+
+@media all and (max-width: 375px) {
+    #work {
+        @include work-shape(300px);
+        #text-work {
+            @include text-work(45%, 0%);
+            p {
+                @include p-work(40%, none);
+            }
+            .hr-up {
+                @include hr-up();
+            }
+        }
+    }
+}

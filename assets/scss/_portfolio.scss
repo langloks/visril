@@ -1,0 +1,96 @@
+#portfolio {
+  
+    position: relative;
+    height: 475px;
+
+}
+
+#video-support-portfolio {
+    max-width: 100%;
+    min-height: 50%;
+    object-fit: cover;
+}
+
+// ============================== MEDIA-QUERIES lg ===============================
+
+@media screen and (min-width: 992px) {
+    #portfolio {
+        height: 850px;
+
+        #carouselExampleIndicators {
+            top: 90px;
+        }
+        #text-portfolio {
+            background: $secondary;
+            position: absolute;
+            top: 0;
+            height: 60%;
+            right: 0;
+            h1 {
+                margin-left: 5vw;
+                margin-top: 2vh;
+            }
+        }
+    }
+}
+
+// ============================== MEDIA-QUERIES tablet ===============================
+
+@media all and (max-width: 991px) {
+    #portfolio {
+        height: 780px;
+
+        #carouselExampleIndicators {
+            top: 85px;
+            position: absolute;
+        }
+        #text-portfolio {
+            background: $secondary;
+            position: absolute;
+            top: 0;
+            height: 80%;
+            h1 {
+                margin-left: 5vw;
+                margin-top: 2vh;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 768px) {
+    #portfolio {
+        height: 800px;
+    }
+}
+
+// ============================== MEDIA-QUERIES TELEPHONE ===============================
+
+@media all and (max-width: 576px) {
+    #portfolio {
+        height: 795px;
+    }
+}
+
+@media all and (max-width: 495px) {
+    #portfolio {
+        height: 690px;
+    }
+}
+
+@media all and (max-width: 425px) {
+    #portfolio {
+        height: 650px;
+    }
+}
+
+@media all and (max-width: 375px) {
+    #portfolio {
+        height: 550px;
+    }
+}
+
+@media all and (max-width: 325px) {
+    #portfolio {
+        height: 475px;
+    }
+}

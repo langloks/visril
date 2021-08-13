@@ -1,0 +1,118 @@
+@font-face {
+    font-family: "duruSans";
+    src: url("../font/duruSans/DuruSans-Regular.woff2") format("woff2"),
+        url("../font/duruSans/DuruSans-Regular.woff") format("woff"),
+        url("../font/duruSans/DuruSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "saolDisplay";
+    src: url("../font/saolDisplay/SaolDisplay-Regular.woff2") format("woff2"),
+        url("../font/saolDisplay/SaolDisplay-Regular.woff") format("woff"),
+        url("../font/saolDisplay/SaolDisplay-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "bandeins";
+    src: //url('../font/bandeins/bandeins-strange-variable-webfont.woff2') format('woff2'),
+        //url('../font/bandeins/bandeins-strange-variable-webfont.woff') format('woff'),
+        url("../font/bandeins/bandeins-strange-variable.ttf") format("truetype");
+
+}
+
+
+@mixin font-styling ($text-color,$font-f){
+    color: $text-color;
+    font-family: $font-f;
+    font-variation-settings: "wght" 100, "wdth" 100;
+
+   
+}
+
+header {
+    .logo {
+        font-size: 15vh;
+        font-family: saolDisplay;
+        line-height: 0.8em;
+    }
+    .sublogo {
+        font-size: 3vh;
+        font-family: duruSans;
+    }
+}
+
+@media all and (max-width: 375px) {
+
+    header {
+        .logo {
+            font-size: 10vh;
+            font-family: saolDisplay;
+            line-height: 0.8em;
+        }
+        .sublogo {
+            font-size: 2vh;
+            font-family: duruSans;
+        }
+    }
+}
+
+nav {
+    .navbar-brand {
+        font-family: "duruSans";
+        font-size: 32px;
+    }
+    .nav-item {
+        font-family: "bandeins";
+        font-size: 24px;
+        font-variation-settings: "wght" 100, "wdth" 100;
+        transition:font-variation-settings 0.2s;
+    }
+
+   
+        .nav-item:hover {
+            font-variation-settings:"wght" 500, "wdth" 400;
+        }
+    
+}
+
+#text-about {
+    h1 {
+        @include font-styling (white,'bandeins');
+       
+    }
+    p  {@include font-styling (white,'duruSans')}
+}
+
+#text-work {
+    h1 {@include font-styling (black,'bandeins');
+        }
+    p  {@include font-styling (black,'duruSans')}
+}
+
+#text-portfolio {
+    h1 {@include font-styling (white,'bandeins');
+        }
+}
+
+footer {
+    @include font-styling (black,'bandeins');
+    font-size: 1rem;
+
+    a {
+        @include font-styling (black,'bandeins');
+        font-size: 1rem;
+        text-decoration: none;
+        font-variation-settings: "wght" 100, "wdth" 100;
+        transition:font-variation-settings 0.2s;
+    }
+    a:visited {
+        text-decoration: none;
+        color: black;
+    }
+    a:hover{
+        text-decoration: none;
+        color: black;
+        font-variation-settings:"wght" 500, "wdth" 400;
+        
+    }
+}
